@@ -1,0 +1,7 @@
+{
+  "logUrl": "{{.Build.LogUrl}}",
+  "repoName": "{{.Build.Substitutions.REPO_NAME}}",
+  "status": "{{.Build.Status}}",
+  "tag": "{{.Build.Substitutions.TAG_NAME}}",
+  "triggerName": "{{.Build.Substitutions.TRIGGER_NAME}}"
+}
