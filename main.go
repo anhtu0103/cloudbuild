@@ -71,7 +71,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	// Setup message card.
 	msgCard := messagecard.NewMessageCard()
-	msgCard.Title = fmt.Sprintf("Cloud Build (%s)", b.RepoName)
+	msgCard.Title = fmt.Sprintf("Cloud Build (%s)", b.TriggerName)
 	msgCard.Text = "**Tag** " + b.Tag +
 		"<br>**Status** " + string(b.Status)
 	msgCard.ThemeColor = status2Theme(b.Status)
