@@ -58,6 +58,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if b.TriggerName == "" {
+		fmt.Fprintf(w, "Only send notification for cloudbuild %s!")
+		return
+	}
+
 	// Initialize a new Microsoft Teams client.
 	mstClient := goteamsnotify.NewTeamsClient()
 
