@@ -31,12 +31,13 @@ type (
 		Type    string       `json:"type"`
 		Wrap    bool         `json:"wrap,omitempty"`
 		Text    string       `json:"text,omitempty"`
-		Actions []CardAction `json:"actions"`
+		Actions []CardAction `json:"actions,omitempty"`
 	}
 	CardAction struct {
 		Type  string `json:"type"`
 		Title string `json:"title"`
 		URL   string `json:"url"`
+		Style string `json:"style"`
 	}
 )
 
@@ -124,7 +125,11 @@ func toTeamsWorkFlow(notification Notification) AdaptiveCard {
 	card := AdaptiveCard{
 		Attachments: []CardAttachment{
 			{
+				ContentType: "application/vnd.microsoft.card.adaptive",
 				Content: CardContent{
+					Schema:  "http://adaptivecards.io/schemas/adaptive-card.json",
+					Type:    "AdaptiveCard",
+					Version: "1.0",
 					Body: []CardBody{
 						{
 							Type: "TextBlock",
@@ -138,6 +143,7 @@ func toTeamsWorkFlow(notification Notification) AdaptiveCard {
 									Type:  "Action.OpenUrl",
 									Title: "View Incident",
 									URL:   notification.Incident.URL,
+									Style: "positive",
 								},
 							},
 						},

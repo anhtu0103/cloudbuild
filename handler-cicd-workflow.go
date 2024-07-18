@@ -30,7 +30,11 @@ func handlerCICDWorkflow(w http.ResponseWriter, r *http.Request) {
 	card := AdaptiveCard{
 		Attachments: []CardAttachment{
 			{
+				ContentType: "application/vnd.microsoft.card.adaptive",
 				Content: CardContent{
+					Schema:  "http://adaptivecards.io/schemas/adaptive-card.json",
+					Type:    "AdaptiveCard",
+					Version: "1.0",
 					Body: []CardBody{
 						{
 							Type: "TextBlock",
@@ -44,6 +48,7 @@ func handlerCICDWorkflow(w http.ResponseWriter, r *http.Request) {
 									Type:  "Action.OpenUrl",
 									Title: "View Logs",
 									URL:   b.LogUrl,
+									Style: "positive",
 								},
 							},
 						},
