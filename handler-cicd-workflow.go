@@ -38,7 +38,7 @@ func handlerCICDWorkflow(w http.ResponseWriter, r *http.Request) {
 					Body: []CardBody{
 						{
 							Type: "TextBlock",
-							Wrap: false,
+							Wrap: true,
 							Text: msgText,
 						},
 						{

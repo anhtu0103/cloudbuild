@@ -133,7 +133,7 @@ func toTeamsWorkFlow(notification Notification) AdaptiveCard {
 					Body: []CardBody{
 						{
 							Type: "TextBlock",
-							Wrap: false,
+							Wrap: true,
 							Text: msgText,
 						},
 						{
