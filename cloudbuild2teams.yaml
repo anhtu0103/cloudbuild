@@ -6,7 +6,7 @@ spec:
   notification:
     filter: build.status in [Build.Status.QUEUED, Build.Status.WORKING, Build.Status.SUCCESS, Build.Status.FAILURE, Build.Status.CANCELLED]
     delivery:
-      url: https://cloudbuild2teams-lw64mxkbwq-as.a.run.app
+      url: https://cloudbuild2teams-lw64mxkbwq-as.a.run.app/workflow
     template:
       type: golang
       uri: gs://diva-notifier/cloudbuild2teams.json
