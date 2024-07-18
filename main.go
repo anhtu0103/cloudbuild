@@ -9,7 +9,9 @@ import (
 func main() {
 	log.Print("starting server...")
 	http.HandleFunc("/alert", handlerAlert)
+	http.HandleFunc("/alert-workflow", handlerAlertWorkflow)
 	http.HandleFunc("/", handlerCICD)
+	http.HandleFunc("/workflow", handlerCICDWorkflow)
 
 	// Determine port for HTTP service.
 	port := os.Getenv("PORT")
