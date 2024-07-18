@@ -1,8 +1,6 @@
 # github.com/atc0005/go-teams-notify/v2 v2.10.0
 ## explicit; go 1.14
 github.com/atc0005/go-teams-notify/v2
-github.com/atc0005/go-teams-notify/v2/adaptivecard
-github.com/atc0005/go-teams-notify/v2/internal/validator
 github.com/atc0005/go-teams-notify/v2/messagecard
 # github.com/dustin/go-humanize v1.0.1
 ## explicit; go 1.16
