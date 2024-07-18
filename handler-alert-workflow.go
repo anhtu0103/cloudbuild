@@ -105,11 +105,12 @@ func toTeamsWorkFlow(notification Notification) AdaptiveCard {
 		ended = time.Unix(et, 0)
 	}
 
-	msgText := "  \n*Incident ID*: " + notification.Incident.IncidentID +
-		"  \n*Condition*: " + conditionName
-	if notification.Incident.Summary != "" {
-		msgText += "  \n*Summary*: " + notification.Incident.Summary
-	}
+	msgText := "  \n*Condition*: " + conditionName +
+		"  \n*Incident ID*: " + notification.Incident.IncidentID
+
+	// if notification.Incident.Summary != "" {
+	// 	msgText += "  \n*Summary*: " + notification.Incident.Summary
+	// }
 	if notification.Incident.State == "open" {
 		msgText += "  \n*Status*: Opened"
 	} else {
